@@ -1,6 +1,5 @@
 package com.modelodedominio_orm.demo.entities;
 
-
 import jakarta.persistence.*;
 
 import java.time.Instant;
@@ -20,8 +19,8 @@ public class Bloco {
     @Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
     private Instant fim;
 
-    @OneToOne
-    @MapsId
+    @ManyToOne
+    @JoinColumn(name = "atividade")
     private Atividade atividade;
 
 }
