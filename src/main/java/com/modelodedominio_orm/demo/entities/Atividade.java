@@ -27,12 +27,12 @@ public class Atividade {
     private List<Bloco> blocos = new ArrayList<>();
 
     @ManyToMany(mappedBy = "atividades")
-    private List<Participante> participantes = new ArrayList<>();
+    private Set<Participante> participantes = new HashSet<>();
 
     public Atividade() {
     }
 
-    public Atividade(Integer id, String nome, String descricao, double preco, Categoria categoria, List<Bloco> blocos, List<Participante> participantes) {
+    public Atividade(Integer id, String nome, String descricao, double preco, Categoria categoria, List<Bloco> blocos, Set<Participante> participantes) {
         this.id = id;
         this.nome = nome;
         this.descricao = descricao;
@@ -86,7 +86,7 @@ public class Atividade {
         return blocos;
     }
 
-    public List<Participante> getParticipantes() {
+    public Set<Participante> getParticipantes() {
         return participantes;
     }
 }
